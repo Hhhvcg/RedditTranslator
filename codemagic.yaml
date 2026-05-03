@@ -4,16 +4,19 @@ workflows:
     max_build_duration: 30
     instance_type: mac_mini_m2
 
+    environment:
+      vars:
+        THEOS: /Users/builder/theos
+
     scripts:
       - name: Install Theos
         script: |
-          bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-thetos)"
-          echo 'export THEOS=$HOME/theos' >> ~/.zshrc
-          echo 'export PATH=$HOME/theos/bin:$PATH' >> ~/.zshrc
+          export THEOS=/Users/builder/theos
+          bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)"
 
       - name: Build package
         script: |
-          export THEOS=$HOME/theos
+          export THEOS=/Users/builder/theos
           export PATH=$THEOS/bin:$PATH
           make package FINALPACKAGE=1
 
