@@ -21,4 +21,4 @@ workflows:
           make package FINALPACKAGE=1
 
     artifacts:
-      - packages/*.deb
+      - .theos/obj/debug/RedditTranslator.dylib
