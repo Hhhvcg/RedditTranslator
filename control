@@ -1,0 +1,9 @@
+Package: com.yourname.reddittranslator
+Name: Reddit Translator
+Depends: mobilesubstrate, preferenceloader
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: Adds Google Translate to Reddit iOS app. Long-press any text or tap the translate button in posts and comments.
+Maintainer: Your Name
+Author: Your Name
+Section: Tweaks
