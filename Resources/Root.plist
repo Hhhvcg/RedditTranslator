@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>title</key>
+    <string>Reddit Translator</string>
+
+    <key>items</key>
+    <array>
+
+        <dict>
+            <key>cell</key>    <string>PSGroupCell</string>
+            <key>label</key>   <string>基本設定</string>
+        </dict>
+
+        <dict>
+            <key>cell</key>         <string>PSLinkListCell</string>
+            <key>label</key>        <string>翻訳先の言語</string>
+            <key>detail</key>       <string>PSValueCellDetail</string>
+            <key>key</key>          <string>targetLanguage</string>
+            <key>default</key>      <string>ja</string>
+            <key>defaults</key>     <string>com.yourname.reddittranslator</string>
+            <key>validValues</key>
+            <array>
+                <string>ja</string>
+                <string>en</string>
+                <string>zh-CN</string>
+                <string>zh-TW</string>
+                <string>ko</string>
+                <string>es</string>
+                <string>fr</string>
+                <string>de</string>
+                <string>pt</string>
+                <string>it</string>
+                <string>ru</string>
+                <string>ar</string>
+                <string>hi</string>
+                <string>id</string>
+                <string>tr</string>
+            </array>
+            <key>validTitles</key>
+            <array>
+                <string>🇯🇵 日本語</string>
+                <string>🇺🇸 English</string>
+                <string>🇨🇳 中文（簡体）</string>
+                <string>🇹🇼 中文（繁体）</string>
+                <string>🇰🇷 한국어</string>
+                <string>🇪🇸 Español</string>
+                <string>🇫🇷 Français</string>
+                <string>🇩🇪 Deutsch</string>
+                <string>🇧🇷 Português</string>
+                <string>🇮🇹 Italiano</string>
+                <string>🇷🇺 Русский</string>
+                <string>🇸🇦 العربية</string>
+                <string>🇮🇳 हिन्दी</string>
+                <string>🇮🇩 Bahasa Indonesia</string>
+                <string>🇹🇷 Türkçe</string>
+            </array>
+        </dict>
+
+        <dict>
+            <key>cell</key>    <string>PSGroupCell</string>
+            <key>label</key>   <string>動作設定</string>
+        </dict>
+
+        <dict>
+            <key>cell</key>     <string>PSSwitchCell</string>
+            <key>label</key>    <string>セルに翻訳ボタンを表示</string>
+            <key>key</key>      <string>showTranslateButton</string>
+            <key>default</key>  <true/>
+            <key>defaults</key> <string>com.yourname.reddittranslator</string>
+        </dict>
+
+        <dict>
+            <key>cell</key>     <string>PSSwitchCell</string>
+            <key>label</key>    <string>テキスト長押しで翻訳</string>
+            <key>key</key>      <string>enableLongPress</string>
+            <key>default</key>  <true/>
+            <key>defaults</key> <string>com.yourname.reddittranslator</string>
+        </dict>
+
+        <dict>
+            <key>cell</key>    <string>PSGroupCell</string>
+            <key>label</key>   <string>API設定</string>
+            <key>footerText</key>
+            <string>Google Cloud Console で Cloud Translation API を有効にして取得した API キーを入力してください。</string>
+        </dict>
+
+        <dict>
+            <key>cell</key>         <string>PSEditTextCell</string>
+            <key>label</key>        <string>Google Translate API キー</string>
+            <key>key</key>          <string>apiKey</string>
+            <key>default</key>      <string></string>
+            <key>defaults</key>     <string>com.yourname.reddittranslator</string>
+            <key>placeholder</key>  <string>AIza...</string>
+            <key>isSecure</key>     <true/>
+        </dict>
+
+        <dict>
+            <key>cell</key>    <string>PSGroupCell</string>
+            <key>label</key>   <string>情報</string>
+        </dict>
+
+        <dict>
+            <key>cell</key>    <string>PSStaticTextCell</string>
+            <key>label</key>   <string>バージョン</string>
+            <key>value</key>   <string>1.0.0</string>
+        </dict>
+
+    </array>
+</dict>
+</plist>
