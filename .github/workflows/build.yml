@@ -1,0 +1,37 @@
+name: Build RedditTranslator
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build .deb
+    runs-on: macos-13
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Theos
+        uses: Randomblock1/theos-action@v1
+        with:
+          theos-sdks-path: ./theos/sdks
+          cache-theos: true
+
+      - name: Build package
+        run: |
+          make package FINALPACKAGE=1
+        env:
+          THEOS: ${{ env.THEOS }}
+
+      - name: Upload .deb
+        uses: actions/upload-artifact@v4
+        with:
+          name: RedditTranslator-${{ github.sha }}
+          path: packages/*.deb
+          if-no-files-found: error
+          retention-days: 30
