@@ -1,0 +1,21 @@
+workflows:
+  reddit-translator:
+    name: Build RedditTranslator
+    max_build_duration: 30
+    instance_type: mac_mini_m2
+
+    scripts:
+      - name: Install Theos
+        script: |
+          bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-thetos)"
+          echo 'export THEOS=$HOME/theos' >> ~/.zshrc
+          echo 'export PATH=$HOME/theos/bin:$PATH' >> ~/.zshrc
+
+      - name: Build package
+        script: |
+          export THEOS=$HOME/theos
+          export PATH=$THEOS/bin:$PATH
+          make package FINALPACKAGE=1
+
+    artifacts:
+      - packages/*.deb
