@@ -20,5 +20,14 @@ workflows:
           export PATH=$THEOS/bin:$PATH
           make package FINALPACKAGE=1
 
+      - name: Find and copy dylib
+        script: |
+          echo "=== dylibを探しています ==="
+          find . -name "*.dylib" 2>/dev/null
+          mkdir -p output
+          find . -name "*.dylib" -exec cp {} output/ \;
+          ls -la output/
+
     artifacts:
-      - .theos/obj/debug/RedditTranslator.dylib
+      - output/*.dylib
+      - packages/*.deb
